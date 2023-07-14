@@ -2,19 +2,19 @@
     let todoTitle = ""
 
     let todos =[
-        { id: 1, title: "Learn Svelte", completed: false },
-        { id: 2, title: "Learn Vue", completed: false },
-        { id: 3, title: "Learn React", completed: false },
-        { id: 4, title: "Learn Solid", completed: false },
-        { id: 5, title: "Learn Astro", completed: false },
+        { id: "1", title: "Learn Svelte", completed: false },
+        { id: "2", title: "Learn Vue", completed: false },
+        { id: "3", title: "Learn React", completed: false },
+        { id: "4", title: "Learn Solid", completed: false },
+        { id: "5", title: "Learn Astro", completed: false },
     ]
 
     function addTodo(){
-        todos = [...todos, { id: todos.length + 1, title: todoTitle, completed: false }]
+        todos = [...todos, { id: crypto.randomUUID(), title: todoTitle, completed: false }]
         todoTitle = ""
     }
 
-    function deleteTodo(id: number){
+    function deleteTodo(id: string){
         todos = todos.filter(todo => todo.id !== id)
     }
 

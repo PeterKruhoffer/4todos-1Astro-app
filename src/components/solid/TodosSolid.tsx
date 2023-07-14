@@ -4,21 +4,18 @@ import { For } from "solid-js";
 export default function TodosSolid() {
   let input: string;
   const [todos, setTodos] = createStore([
-    { id: 1, title: "Learn Solid", completed: false },
-    { id: 2, title: "Learn Svelte", completed: false },
-    { id: 3, title: "Learn Vue", completed: false },
-    { id: 4, title: "Learn React", completed: false },
-    { id: 5, title: "Learn Astro", completed: false },
+    { id: "1", title: "Learn Solid", completed: false },
+    { id: "2", title: "Learn Svelte", completed: false },
+    { id: "3", title: "Learn Vue", completed: false },
+    { id: "4", title: "Learn React", completed: false },
+    { id: "5", title: "Learn Astro", completed: false },
   ]);
 
   const addTodo = (title: string) => {
-    if (title === "") {
-      return;
-    }
-    setTodos([...todos, { id: todos.length + 1, title, completed: false }]);
+    setTodos([...todos, { id: crypto.randomUUID(), title, completed: false }]);
   };
 
-  const deleteTodo = (id: number) => {
+  const deleteTodo = (id: string) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
   };
