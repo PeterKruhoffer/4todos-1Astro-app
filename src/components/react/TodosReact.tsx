@@ -52,7 +52,7 @@ export default function TodosReact() {
           placeholder="Title"
           className="rounded p-2"
         />
-        <button className="border-2 border-blue-600/90 rounded text-slate-200">
+        <button className="border-2 border-slate-700 rounded text-slate-200">
           Add
         </button>
       </form>
@@ -68,7 +68,7 @@ function Todo({
   deleteTodo: (id: string) => void;
 }) {
   return (
-    <div className="p-2 border-2 bg-blue-500 border-blue-500/30 w-1/2 rounded relative shadow-md">
+    <div className="p-2 border-2 bg-blue-500 border-slate-700 w-1/2 rounded relative shadow-md">
       <h2 className="text-center text-slate-200">{todo.title}</h2>
       <button
         onClick={() => deleteTodo(todo.id)}

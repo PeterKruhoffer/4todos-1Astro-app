@@ -27,7 +27,7 @@ export default function TodosSolid() {
         <For each={todos}>
           {(todo) => {
             return (
-              <div className="p-2 border-2 bg-sky-500 border-sky-500/40 shadow-md w-1/2 rounded relative">
+              <div className="p-2 border-2 bg-sky-500 border-slate-700 shadow-md w-1/2 rounded relative">
                 <h2 className="text-center text-slate-200">{todo.title}</h2>
                 <button
                   onClick={() => deleteTodo(todo.id)}
@@ -58,7 +58,7 @@ export default function TodosSolid() {
           placeholder="Title"
           class="rounded p-2"
         />
-        <button class="border-2 border-sky-500/70 rounded text-slate-200">
+        <button class="border-2 border-slate-700 rounded text-slate-200">
           Add
         </button>
       </form>

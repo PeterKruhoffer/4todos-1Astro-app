@@ -8,7 +8,7 @@
     >
       <div v-for="todo in todos" class="w-1/2">
         <div
-          class="p-2 border-2 bg-green-800 border-green-700/30 shadow-md rounded relative"
+          class="p-2 border-2 bg-green-800 border-slate-700 shadow-md rounded relative"
         >
           <h2 class="text-center text-slate-200">{{ todo.title }}</h2>
           <button
@@ -29,7 +29,7 @@
         placeholder="Title"
         class="rounded p-2"
       />
-      <button class="border-2 border-green-700/50 rounded text-green-900">
+      <button class="border-2 border-slate-700 rounded text-green-900">
         Add
       </button>
     </form>

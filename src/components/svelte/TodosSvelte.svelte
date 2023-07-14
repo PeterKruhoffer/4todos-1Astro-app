@@ -24,7 +24,7 @@
       <h1 class="text-orange-500 text-xl pt-2">Todo in Svelte</h1>
       <div class="overflow-auto h-96 w-full flex flex-col items-center gap-7 pt-4">
       {#each todos as todo }
-        <div class="p-2 border-2 bg-orange-500 border-orange-700/30 shadow-md w-1/2 rounded relative">
+        <div class="p-2 border-2 bg-orange-500 border-slate-700 shadow-md w-1/2 rounded relative">
             <h2 class="text-center text-slate-200">{todo.title}</h2>
               <button
                 class="text-slate-200 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
@@ -44,6 +44,6 @@
         placeholder="Title"
         class="rounded p-2 border-2"
       />
-      <button class="border-2 rounded border-orange-700/30 text-orange-500">Add</button>
+      <button class="border-2 rounded border-slate-700 text-orange-500">Add</button>
     </form>
     </div>
