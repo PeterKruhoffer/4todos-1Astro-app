@@ -1,29 +1,37 @@
 <template>
   <div
-    class="flex flex-col items-center gap-10 pb-4 bg-green-500 overflow-auto max-h-1/4 min-h-1/4 border-2 border-slate-700"
+    class="overflow-auto flex flex-col items-center gap-10 pb-4 bg-green-600 border-2 border-slate-700"
   >
-    <h1 class="text-slate-200">Todo in Vue</h1>
-    <div v-for="todo in todos" class="w-1/2">
-      <div class="p-2 border-2 bg-green-600 rounded relative">
-        <h2 class="text-center">{{ todo.title }}</h2>
-        <button
-          class="text-white-200 absolute top-0 right-2"
-          @click="deleteTodo(todo.id)"
+    <h1 class="text-slate-200 text-xl pt-2">Todo in Vue</h1>
+    <div
+      class="overflow-auto h-96 w-full flex flex-col items-center gap-7 pt-4"
+    >
+      <div v-for="todo in todos" class="w-1/2">
+        <div
+          class="p-2 border-2 bg-green-800 border-green-700/30 shadow-md rounded relative"
         >
-          x
-        </button>
+          <h2 class="text-center text-slate-200">{{ todo.title }}</h2>
+          <button
+            class="text-slate-200 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
+            @click="deleteTodo(todo.id)"
+          >
+            x
+          </button>
+        </div>
       </div>
     </div>
     <form class="flex flex-col gap-y-2" @submit.prevent="addTodo">
-      <label html-for="title" class="text-slate-700">Enter Title</label>
+      <label for="title-vue" class="text-slate-200">Enter Title</label>
       <input
-        id="title"
+        id="title-vue"
         required
         v-model="todoTitle"
         placeholder="Title"
         class="rounded p-2"
       />
-      <button class="border-2 rounded">Add</button>
+      <button class="border-2 border-green-700/50 rounded text-green-900">
+        Add
+      </button>
     </form>
   </div>
 </template>

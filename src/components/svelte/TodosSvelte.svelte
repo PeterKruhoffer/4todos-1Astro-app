@@ -20,28 +20,30 @@
 
 </script>
 
-    <div class="flex flex-col items-center gap-10 bg-orange-500 pb-4 overflow-auto max-h-1/4 min-h-1/4 border-2 border-slate-700">
-      <h1 class="text-slate-200">Todo in Svelte</h1>
+    <div class="flex flex-col items-center gap-10 bg-slate-100 pb-4 border-2 border-slate-700">
+      <h1 class="text-orange-500 text-xl pt-2">Todo in Svelte</h1>
+      <div class="overflow-auto h-96 w-full flex flex-col items-center gap-7 pt-4">
       {#each todos as todo }
-        <div class="p-2 border-2 bg-orange-600 w-1/2 rounded relative">
-            <h2 class="text-center">{todo.title}</h2>
+        <div class="p-2 border-2 bg-orange-500 border-orange-700/30 shadow-md w-1/2 rounded relative">
+            <h2 class="text-center text-slate-200">{todo.title}</h2>
               <button
-                class="text-white-200 absolute top-0 right-2"
+                class="text-slate-200 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
                 on:click={() => deleteTodo(todo.id)}
               >
                 x
               </button>
         </div>
       {/each}
+    </div>
     <form class="flex flex-col gap-y-2" on:submit|preventDefault={addTodo}>
-      <label for="title" class="text-slate-700">Enter Title</label>
+      <label for="title-svelte" class="text-orange-500">Enter Title</label>
       <input
-        id="title"
+        id="title-svelte"
         bind:value={todoTitle}
         required
         placeholder="Title"
-        class="rounded p-2"
+        class="rounded p-2 border-2"
       />
-      <button class="border-2 rounded">Add</button>
+      <button class="border-2 rounded border-orange-700/30 text-orange-500">Add</button>
     </form>
     </div>

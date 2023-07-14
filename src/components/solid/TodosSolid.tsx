@@ -18,37 +18,31 @@ export default function TodosSolid() {
     setTodos([...todos, { id: todos.length + 1, title, completed: false }]);
   };
 
-  const toggleTodo = (id: number) => {
-    setTodos(
-      (todo) => todo.id === id,
-      "completed",
-      (completed) => !completed
-    );
-  };
-
   const deleteTodo = (id: number) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
   };
 
   return (
-    <div className="flex flex-col items-center gap-10 bg-sky-500 pb-4 overflow-auto max-h-1/4 min-h-1/4 border-2 border-slate-700">
-      <h1 className="text-slate-200">Todo in Solid</h1>
-      <For each={todos}>
-        {(todo) => {
-          return (
-            <div className="p-2 border-2 bg-blue-400 w-1/2 rounded relative">
-              <h2 className="text-center">{todo.title}</h2>
-              <button
-                onClick={() => deleteTodo(todo.id)}
-                class="text-white-200 absolute top-0 right-2"
-              >
-                x
-              </button>
-            </div>
-          );
-        }}
-      </For>
+    <div class="overflow-auto flex flex-col items-center gap-10 pb-4 bg-sky-700/90 border-2 border-slate-700">
+      <h2 class="text-slate-200 text-xl pt-2">Todo in Solid</h2>
+      <div class="overflow-auto h-96 w-full flex flex-col items-center gap-7 pt-4">
+        <For each={todos}>
+          {(todo) => {
+            return (
+              <div className="p-2 border-2 bg-sky-500 border-sky-500/40 shadow-md w-1/2 rounded relative">
+                <h2 className="text-center text-slate-200">{todo.title}</h2>
+                <button
+                  onClick={() => deleteTodo(todo.id)}
+                  class="text-slate-200 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
+                >
+                  x
+                </button>
+              </div>
+            );
+          }}
+        </For>
+      </div>
       <form
         class="flex flex-col gap-y-2"
         onSubmit={(e) => {
@@ -57,17 +51,19 @@ export default function TodosSolid() {
           input.value = "";
         }}
       >
-        <label for="title" class="text-slate-700">
+        <label for="title-solid" class="text-slate-200">
           Enter Title
         </label>
         <input
-          id="title"
+          id="title-solid"
           ref={input}
           required
           placeholder="Title"
           class="rounded p-2"
         />
-        <button class="border-2 rounded">Add</button>
+        <button class="border-2 border-sky-500/70 rounded text-slate-200">
+          Add
+        </button>
       </form>
     </div>
   );

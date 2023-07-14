@@ -29,11 +29,13 @@ export default function TodosReact() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-10 bg-blue-500 overflow-auto max-h-1/4 min-h-1/4 border-2 border-slate-700">
-      <h1 className="text-slate-200">Todo in React</h1>
-      {todos.map((todo) => (
-        <Todo todo={todo} deleteTodo={deleteTodo} key={todo.id} />
-      ))}
+    <div className="overflow-auto flex flex-col items-center gap-10 pb-4 bg-blue-600/70 border-2 border-slate-700">
+      <h1 className="text-slate-200 text-xl pt-2">Todo in React</h1>
+      <div className="overflow-auto h-96 w-full flex flex-col items-center gap-7 pt-4">
+        {todos.map((todo) => (
+          <Todo todo={todo} deleteTodo={deleteTodo} key={todo.id} />
+        ))}
+      </div>
       <form
         className="flex flex-col gap-y-2"
         onSubmit={(e) => {
@@ -42,18 +44,20 @@ export default function TodosReact() {
           setInput("");
         }}
       >
-        <label html-for="title" className="text-slate-700">
+        <label htmlFor="title-react" className="text-slate-200">
           Enter Title
         </label>
         <input
-          id="title"
+          id="title-react"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           required
           placeholder="Title"
           className="rounded p-2"
         />
-        <button className="border-2 rounded">Add</button>
+        <button className="border-2 border-blue-600/90 rounded text-slate-200">
+          Add
+        </button>
       </form>
     </div>
   );
@@ -67,11 +71,11 @@ function Todo({
   deleteTodo: (id: number) => void;
 }) {
   return (
-    <div className="p-2 border-2 bg-blue-600 w-1/2 rounded relative">
-      <h2 className="text-center">{todo.title}</h2>
+    <div className="p-2 border-2 bg-blue-500 border-blue-500/30 w-1/2 rounded relative shadow-md">
+      <h2 className="text-center text-slate-200">{todo.title}</h2>
       <button
         onClick={() => deleteTodo(todo.id)}
-        className="text-white-200 absolute top-0 right-2"
+        className="text-slate-200 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
       >
         x
       </button>
