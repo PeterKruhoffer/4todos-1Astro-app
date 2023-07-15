@@ -26,8 +26,8 @@ export default function TodosReact() {
   };
 
   return (
-    <div className="overflow-auto flex flex-col items-center gap-10 pb-4 bg-blue-600/70 border-2 border-slate-700">
-      <h1 className="text-slate-200 text-xl pt-2">Todo in React</h1>
+    <div className="overflow-auto flex flex-col items-center gap-10 pb-4 bg-blue-600/70 border-2 border-black">
+      <h2 className="text-white text-xl pt-2">Todo in React</h2>
       <div className="overflow-auto h-96 w-full flex flex-col items-center gap-7 pt-4">
         {todos.map((todo) => (
           <Todo todo={todo} deleteTodo={deleteTodo} key={todo.id} />
@@ -41,7 +41,7 @@ export default function TodosReact() {
           setInput("");
         }}
       >
-        <label htmlFor="title-react" className="text-slate-200">
+        <label htmlFor="title-react" className="text-slate-50">
           Enter Title
         </label>
         <input
@@ -52,7 +52,7 @@ export default function TodosReact() {
           placeholder="Title"
           className="rounded p-2"
         />
-        <button className="border-2 border-slate-700 rounded text-slate-200">
+        <button className="border-2 border-slate-900 rounded text-white">
           Add
         </button>
       </form>
@@ -68,11 +68,11 @@ function Todo({
   deleteTodo: (id: string) => void;
 }) {
   return (
-    <div className="p-2 border-2 bg-blue-500 border-slate-700 w-1/2 rounded relative shadow-md">
-      <h2 className="text-center text-slate-200">{todo.title}</h2>
+    <div className="p-3 bg-blue-500 w-1/2 rounded relative shadow-md">
+      <h2 className="text-center text-black">{todo.title}</h2>
       <button
         onClick={() => deleteTodo(todo.id)}
-        className="text-slate-200 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
+        className="text-slate-50 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
       >
         x
       </button>

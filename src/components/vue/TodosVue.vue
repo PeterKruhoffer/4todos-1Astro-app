@@ -1,18 +1,16 @@
 <template>
   <div
-    class="overflow-auto flex flex-col items-center gap-10 pb-4 bg-green-600 border-2 border-slate-700"
+    class="overflow-auto flex flex-col items-center gap-10 pb-4 bg-green-600 border-2 border-black"
   >
-    <h1 class="text-slate-200 text-xl pt-2">Todo in Vue</h1>
+    <h1 class="text-black text-xl pt-2">Todo in Vue</h1>
     <div
       class="overflow-auto h-96 w-full flex flex-col items-center gap-7 pt-4"
     >
       <div v-for="todo in todos" class="w-1/2">
-        <div
-          class="p-2 border-2 bg-green-800 border-slate-700 shadow-md rounded relative"
-        >
-          <h2 class="text-center text-slate-200">{{ todo.title }}</h2>
+        <div class="p-3 bg-green-800 shadow-md rounded relative">
+          <h2 class="text-center text-white">{{ todo.title }}</h2>
           <button
-            class="text-slate-200 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
+            class="text-white absolute -top-1 -right-1 bg-red-500 px-2 rounded"
             @click="deleteTodo(todo.id)"
           >
             x
@@ -21,7 +19,7 @@
       </div>
     </div>
     <form class="flex flex-col gap-y-2" @submit.prevent="addTodo">
-      <label for="title-vue" class="text-slate-200">Enter Title</label>
+      <label for="title-vue" class="text-black">Enter Title</label>
       <input
         id="title-vue"
         required
@@ -29,9 +27,7 @@
         placeholder="Title"
         class="rounded p-2"
       />
-      <button class="border-2 border-slate-700 rounded text-green-900">
-        Add
-      </button>
+      <button class="border-2 border-black rounded text-black">Add</button>
     </form>
   </div>
 </template>

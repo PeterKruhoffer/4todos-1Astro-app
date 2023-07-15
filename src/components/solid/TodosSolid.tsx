@@ -21,17 +21,17 @@ export default function TodosSolid() {
   };
 
   return (
-    <div class="overflow-auto flex flex-col items-center gap-10 pb-4 bg-sky-700/90 border-2 border-slate-700">
-      <h2 class="text-slate-200 text-xl pt-2">Todo in Solid</h2>
+    <div class="overflow-auto flex flex-col items-center gap-10 pb-4 bg-sky-700/90 border-2 border-black">
+      <h2 class="text-white text-xl pt-2">Todo in Solid</h2>
       <div class="overflow-auto h-96 w-full flex flex-col items-center gap-7 pt-4">
         <For each={todos}>
           {(todo) => {
             return (
-              <div className="p-2 border-2 bg-sky-500 border-slate-700 shadow-md w-1/2 rounded relative">
-                <h2 className="text-center text-slate-200">{todo.title}</h2>
+              <div className="p-3 bg-sky-500 shadow-md w-1/2 rounded relative">
+                <h2 className="text-center text-black">{todo.title}</h2>
                 <button
                   onClick={() => deleteTodo(todo.id)}
-                  class="text-slate-200 absolute -top-1 -right-1 bg-red-500 px-2 rounded"
+                  class="text-white absolute -top-1 -right-1 bg-red-500 px-2 rounded"
                 >
                   x
                 </button>
@@ -48,7 +48,7 @@ export default function TodosSolid() {
           input.value = "";
         }}
       >
-        <label for="title-solid" class="text-slate-200">
+        <label for="title-solid" class="text-white">
           Enter Title
         </label>
         <input
@@ -58,9 +58,7 @@ export default function TodosSolid() {
           placeholder="Title"
           class="rounded p-2"
         />
-        <button class="border-2 border-slate-700 rounded text-slate-200">
-          Add
-        </button>
+        <button class="border-2 border-white rounded text-white">Add</button>
       </form>
     </div>
   );
